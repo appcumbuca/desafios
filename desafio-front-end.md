@@ -33,14 +33,6 @@ o repositório deve ser acessível à equipe da UmHelp. Caso não queira
 disponibilizar seu código publicamente, converse conosco sobre como podemos
 fazer para obter acesso a seu código.
 
-## Avaliação
-Seu desafio deverá ser disponibilizado por meio de um repositório Git
-(podendo este ser hosteado da forma que for mais conveniente a você, por
-exemplo usando uma plataforma como GitHub ou GitLab). A única restrição é que
-o repositório deve ser acessível à equipe da UmHelp. Caso não queira
-disponibilizar seu código publicamente, converse conosco sobre como podemos
-fazer para obter acesso a seu código.
-
 ### Critérios
 Uma vez que ele seja disponibilizado a nós, a avaliação de seu código será feita de acordo com os seguintes critérios, em ordem aproximada de importância:
 
