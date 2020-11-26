@@ -40,10 +40,10 @@ Uma vez que ele seja disponibilizado a nós, a avaliação de seu código será 
 Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento
 
 #### Responsividade
-A sua interface deve reagir aos inputs do usuário sem que haja delay percebido por ele, mesmo em dispositivos não tão poderosos.
+A sua interface deve adaptar-se a dispositivos e tamanhos de tela distintos, independente do dispositivos utilizado para acessar o conteúdo, apresentando uma interface adequada a cada tamanho de tela.
 
 #### Reatividade
-A sua interface deve adaptar-se a dispositivos e tamanhos de tela distintos, independente do dispositivos utilizado para acessar o conteúdo, apresentando uma interface adequada a cada tamanho de tela.
+A sua interface deve reagir aos inputs do usuário sem que haja delay percebido por ele, mesmo em dispositivos não tão poderosos.
 
 #### Legibilidade e Formatação
 Lembre-se que um trecho de código em geral será lido muito mais vezes do que
