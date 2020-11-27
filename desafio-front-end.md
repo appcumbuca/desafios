@@ -23,7 +23,7 @@ ser feita de 3 formas:
 
 Caso não tenha certeza sobre qualquer coisa explicada neste documento (ou
 qualquer dúvida em geral), fique à vontade para enviar um email para
-pedrocastilho@da1help.com com suas dúvidas.
+marcelo@umhelp.com com suas dúvidas.
 
 ## Avaliação
 Seu desafio deverá ser disponibilizado por meio de um repositório Git
@@ -85,8 +85,8 @@ avaliação esteja completa, iremos enviar um feedback sobre sua resolução. Ca
 seu código seja aprovado, além do feedback, iremos marcar uma data para uma
 entrevista presencial ou uma conversa por videochamada com você.
 
-#### Entrevista presencial
-Na entrevista presencial, conversaremos com você sobre a estrutura do seu código e as escolhas feitas por você. Esteja pronta(o) para explicar as decisões que tomou e conversar sobre alternativas. Alguns tópicos nos quais iremos tocar (mas não os únicos) serão:estruturas de interfaces, arquitetura de código, escolha de mecanismos de gestão de estado e de persistência, etc. Além disso, poderemos mudar as condições do desafio e perguntar o que você teria feito diferentemente.
+#### Entrevista (presencial/vídeochamada)
+Na entrevista presencial, conversaremos com você sobre a estrutura do seu código e as escolhas feitas por você. Esteja pronta(o) para explicar as decisões que tomou e conversar sobre alternativas. Alguns tópicos nos quais iremos tocar (mas não os únicos) serão: estruturas de interfaces, arquitetura de código, escolha de mecanismos de gestão de estado e de persistência, etc. Além disso, poderemos mudar as condições do desafio e perguntar o que você teria feito diferentemente.
 
 ## Regras de negócio
 1. Uma vez que a lista de produtos é modificada, a alteração deve ser localmente persistida. Isto é, se o usuário atualizar a página, a lista de produtos na qual ele estava trabalhando deve continuar como estava antes da atualização.
@@ -106,8 +106,12 @@ Na entrevista presencial, conversaremos com você sobre a estrutura do seu códi
 ## Restrições
 1. Caso escolha a opção Vanilla JS, não é permitido o uso de nenhuma
 bibliioteca.
+
 2. Caso escolha a opção React, será permitido apenas o uso das bibliotecas
-React e ReactDOM.
+React e ReactDOM. Caso prefira usar o [Create React App](https://create-react-app.dev/), 
+você poderá usar as dependências requeridas por ele. Se desejar,
+poderá usar também TypeScript.
+
 3. Caso escolha a opção React Native, será permitido apenas o uso das
 bibliotecas React e React Native.
 
@@ -116,6 +120,8 @@ output que será enviado ao cliente. Ferramentas que sejam usadas apenas
 pelo desenvolvedor como minificadores ou pré-processadores ainda são
 permitidas.
 
+
+
 ## Interface
 Os detalhes gráficos da interface não serão especificados por nós. Você pode implementar a interface como desejar - apenas atente-se às consequências de usabilidade de suas escolhas. Segue a descrição funcional da interface a ser implementada:
 
@@ -123,11 +129,14 @@ No topo da interface, deve haver uma barra de busca que permita a inserção de 
 
 Imediatamente abaixo da barra de texto, deve haver uma série de campos que permitam a especificação de um produto (conforme a entidade **Produto** descrita na seção **Entidades**). Junto a esses campos deve haver um botão que permita a criação de um produto de acordo com os inputs especificados nos campos (Exceto o identificador e o valor total, que será atribuído aos produtos criados conforme especificado na seção **Regras de Negócio**). Os campos e botão serão referidos doravante como o “formulário de input”.
 
-Abaixo do formulário de input, deve haver uma lista dos produtos inseridos. Nessa lista, cada item deve exibir os dados de um produto. Cada item da lista deve possibilitar a sua remoção. Os itens devem poder ser reordenados através de “arrastar e soltar” (_drag-and-drop_).
+Abaixo do formulário de input, deve haver uma lista dos produtos inseridos. Essa lista deve ter um cabeçalho com o nome de cada campo do produto. Ao clicar em um campo no cabeçalho, a lista deve ser ordenada de acordo com aquele campo.
 
-A parte de cada item que exibe a quantidade de unidades em estoque do produto correspondente ao item deve ter controles permitindo incrementar ou decrementar a quantidade em estoque daquele item.
+Cada item deve:
+- exibir os dados de um produto
+- exibir um controle que permita incrementar ou decrementar a quantidade em estoque daquele item
+- exibir um controle que permita a remoção daquele item
 
-A lista de produtos deve ter um cabeçalho com o nome de cada campo. Ao clicar no nome de um campo específico no cabeçalho, a lista deve ser ordenada de acordo com aquele campo.
+_Opcional_: os itens devem poder ser reordenados através de “arrastar e soltar” (_drag-and-drop_).
 
 ## Entidades
 
