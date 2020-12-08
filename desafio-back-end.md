@@ -6,25 +6,22 @@ tecnologia. Esperamos ter você a bordo conosco em breve!
 Pedimos que leia este documento **inteiro** com atenção para maximizar suas
 chances de sucesso.
 
-O teste que você irá realizar consiste em elaborar 3 **microsserviços** que
-possibilitam o agendamento de serviços de limpeza por parte de um usuário, com
-a possibilidade de aplicação de descontos promocionais. Os serviços deverão
-expor, publicamente, uma **interface REST** que deve ser provida pelo serviço
-de _gateway_, conforme abaixo descrito. Não deve ser elaborado um front-end
-web ou de outro formato.
+O teste que você irá realizar consiste em elaborar um servidor de registro de
+contas e transações financeiras. Esse sistema deve conseguir receber vários
+pedidos de transação simultaneamente, registrar de forma persistente o histórico
+de transações e retornar o saldo atual de cada conta.
 
 ## Sobre este documento
 - O processo de envio da sua solução e os critérios que serão avaliados pela
 equipe de tecnologia da UmHelp estão descritos abaixo, na seção **Avaliação**.
+- A interface que deve ser exposta pelo servidor está descrita na seção **Interface**.
 - As regras que o sistema deve seguir estão descritas na seção **Regras de
 Negócio**.
-- Algumas restrições adicionais estão descritas na seção **Restrições**.
-- A interface que cada microsserviço deve expor está descrita na seção **Serviços**.
 - As descrições de interfaces ocasionalmente referenciam entidades descritas na seção **Entidades**.
 
 Caso não tenha certeza sobre qualquer coisa explicada neste documento (ou
 qualquer dúvida em geral), fique à vontade para enviar um email para
-pedrocastilho@da1help.com com suas dúvidas.
+tech@umhelp.com com suas dúvidas.
 
 ## Avaliação
 Seu desafio deverá ser disponibilizado por meio de um repositório Git
@@ -52,7 +49,7 @@ plausível, deve ser possível entender o que o código faz apenas lendo ele.
 Explicações usando comentários deveriam ser redundantes.
 
 #### Desacoplamento
-Seu código não deve criar dependências desnecessárias entre módulos e serviços.
+Seu código não deve criar dependências desnecessárias entre módulos.
 Ao alterar uma parte do código, não deveria ser necessário alterar partes sem
 relação lógica com a parte alterada.
 
@@ -66,13 +63,6 @@ minimizá-lo.
 Escreva seu código como se ele fosse ser mantido por muito tempo após você
 criá-lo, por várias pessoas com níveis de experiência variados. Pense no
 esforço necessário para alterar seu código e busque minimizá-lo. Se eu quiser mudar apenas um aspecto do código, precisarei mudar quantas partes dele?
-
-#### Arquitetura Orientada a Serviços
-Busque informar-se sobre boas práticas de Arquitetura Orientada a Serviços e
-usá-las. Seu sistema deve ser robusto quando visto como um todo coerente.
-Busque lembrar que em uma AOS, não é possível assumir que qualquer outro
-serviço esteja em um estado válido. Pense em casos excepcionais e busque lidar
-com eles tanto quanto possível.
 
 #### Opcionais
 Os pontos a seguir são opcionais, mas apreciamos vê-los:
@@ -89,67 +79,79 @@ entrevista presencial ou uma conversa por videochamada com você.
 #### Entrevista presencial
 Na entrevista presencial, conversaremos com você sobre a estrutura do seu código e as escolhas feitas por você. Esteja pronta(o) para explicar as decisões que tomou e conversar sobre alternativas. Alguns tópicos nos quais iremos tocar (mas não os únicos) serão: escolha de bancos de dados, estruturas de interfaces, arquitetura de código. Além disso, poderemos mudar as condições do desafio e perguntar o que você teria feito diferentemente.
 
+## Interface
+
+A interface do servidor pode ser realizada através do padrão de API de escolha
+do candidato (alguns exemplos são os padrões REST, GraphQL e gRPC), desde que se atenha aos
+requisitos especificados aqui.
+
+### Endpoints
+
+Independentemente da tecnologia escolhida para realizar a API, ela deve expor
+endpoints permitindo realizar as operações descritas abaixo.
+
+#### Cadastro de conta
+
+Neste endpoint, devem ser enviados os dados de uma conta e ela deve ser cadastrada na base de contas, caso os dados de usuário estejam válidos de acordo com a seção **Regras de negócio**.
+
+#### Autenticação
+
+Neste endpoint, devem ser enviados os dados de login de uma conta já cadastrada.
+Esses dados devem ser validados e deve ser retornado um token que será utilizado
+para validar transações do usuário. Nos próximos endpoints, o token deve ser 
+enviado para identificar o usuário logado.
+
+#### Cadastro de transação
+
+Neste endpoint, devem ser enviados os dados de uma transação e ela deve ser
+cadastrada na base de transações, caso ela seja feita entre contas válidas e
+caso haja saldo suficiente na conta do usuário logado para realização dela.
+
+#### Estorno de transação
+
+Neste endpoint, deve ser enviado o ID de uma transação já cadastrada e os efeitos dessa transação devem ser revertidos, caso seja possível e a transação tenha sido iniciada pelo usuário logado.
+
+#### Busca de transações por data
+
+Neste endpoint, devem ser enviadas datas inicial e final.
+O endpoint deve retornar todas as transações realizadas pelo usuário logado entre essas datas em ordem cronológica.
+
+#### Visualização de saldo
+
+Neste endpoint, deve ser visualizado o saldo do usuário logado.
+
 ## Regras de negócio
 
-1. Uma vez que um pedido de limpeza é cadastrado, se um desconto foi utilizado, o desconto deve ser consumido (removido da base de descontos). Portanto, o mesmo desconto não deve ser aplicado mais de uma vez.
-2. Descontos não devem ser consumidos quando um preço é apenas visualizado.
-3. Se um usuário tiver múltiplos descontos cadastrados, o desconto que resulte no menor preço total deve ser aplicado ao pedido de limpeza dele.
-4. Uma vez que um pedido de limpeza seja registrado, ele deve ser persistido indefinidamente.
-5. O preço base de um serviço de limpeza (sem aplicação de nenhum desconto) deve ser considerado como sendo de R$ 50 por hora.
-
-## Restrições
-
-1. Os serviços devem usar ao menos 2 linguagens de programação diferentes.
-2. Os serviços podem usar um único banco de dados compartilhado, ou bancos de dados separados. Lembre que essa decisão também será questionada.
-
-## Serviços
-A comunicação entre os serviços pode ser feita usando qualquer padrão de comunicação que você deseje. Lembre-se apenas que você terá que justificar
-suas escolhas durante a entrevista técnica. É recomendado pesquisar sobre padrões de comunicação entre microsserviços para realizar essa escolha.
-
-### Serviço 1: Gateway
-Esse serviço deve expor uma interface REST pública, com os seguintes
-_endpoints_:
-
-- **GET** `/price`:
-  Recebe a especificação de um pedido de limpeza (conforme descrita na seção
-  **Entidades**) e retorna o preço de um pedido de limpeza para o usuário
-  especificado, sem registrar o serviço e sem consumir descontos.
-
-- **POST** `/requests`:
-  Cadastra um novo pedido de limpeza com os parâmetros passados. Retorna os
-  dados do pedido, incluindo o preço final.
-
-- **GET** `/requests`:
-  Retorna todos os pedidos de limpeza atualmente cadastrados.
-
-- **POST** `/discounts`:
-  Cadastra um novo desconto.
-
-Além dos verbos já especificados, os verbos **PUT**, **PATCH** e **DELETE**
-também devem ser implemntados para os endpoints `/requests` e `/discounts`, com
-comportamento de acordo com a semântica padrão REST.
-Adicionalmente, deve ser possível acessar os pedidos de limpeza individualmente
-através do uso de um identificados. Outros endpoints ou verbos podem ser
-criados caso você julgue necessário, mas tenha em mente os requisitos de segurança da aplicação!
-O serviço _gateway_ deve realizar suas funcionalidades através de comunicação
-com os outros serviços, descritos a seguir:
-
-### Serviço 2: Pedidos de limpeza
-Este serviço deve receber requisições de pedidos de limpeza a partir do serviço gateway e calcular os dados que não serão dados no pedido (em especial, o preço do pedido, levando em consideração a aplicação de desconto, caso exista desconto cadastrado no serviço 3. Este serviço também deve ser responsável pelo cadastro persistente de pedidos de limpeza.
-
-### Serviço 3: Descontos individuais
-ste serviço será responsável por cadastrar descontos individuais. Além disso, ele será consultado pelo serviço 2, que o usará para determinar a existência ou não de descontos. Além disso, quando um pedido de limpeza for cadastrado, este serviço será responsável por garantir que a regra 1 seja respeitada.
+1. Uma transação só deve ser realizada caso haja saldo suficiente na conta do usuário para realizá-la.
+2. Após a realização de uma transação, a conta do usuário enviante deve ter seu valor descontado do valor da transação e a do usuário recebedor acrescentada do valor da transação.
+3. Todas as transações realizadas devem ser registradas no banco de dados.
+4. Caso todas as transações no banco de dados sejam realizadas novamente a partir do estado inicial de todas as contas, os saldos devem equivaler aos saldos expostos na interface.
 
 ## Entidades
 
-### Pedido de limpeza
-Um pedido de limpeza deve conter, ao menos, as seguintes informações:
-- Data do pedido
-- Duração da limpeza
-- Identificação do usuário solicitante
+As entidades descritas abaixo são especificações do mínimo de dados necessários para as operações do sistema. Podem ser adicionados outros campos conforme o candidato considere necessário.
 
-### Desconto
-Um desconto deve conter, ao menos, as seguintes informações:
-- Tipo do desconto (valor absoluto ou porcentagem)
-- Valor do desconto
-- Identificação do usuário que tem direito ao desconto
+### Conta de usuário
+Uma conta de usuário precisa no mínimo dos seguintes dados para criação:
+
+- Nome e sobrenome do portador
+- CPF do portador
+- Saldo inicial
+
+Adicionalmente, a conta deve armazenar no mínimo os seguintes dados:
+
+- Identificador único
+- Data de criação
+
+### Transação
+
+Uma transação precisa no mínimo dos seguintes dados para criação:
+
+- Identificador da conta enviante
+- Identificador da conta recebedora
+- Valor
+
+Adicionalmente, o registro deve conter no mínimo os seguintes dados:
+
+- Data de processamento
+- Identificador único
