@@ -7,12 +7,9 @@ Pedimos que leia este documento **inteiro** com atenção para maximizar suas
 chances de sucesso.
 
 O teste que você irá realizar consiste em elaborar uma interface que irá
-permitir que o usuário edite uma lista de produtos. Essa implementação pode
-ser feita de 3 formas:
+permitir que o usuário edite uma lista de produtos. Essa implementação deve ser feita:
 
-- **Como uma aplicação Web**, utilizando **React**
-- **Como uma aplicação Web**, utilizando **JavaScript** ou alguma linguagem que compile para JavaScript **sem nenhum framework**
-- **Como um aplicativo móvel híbrido**, utilizando **React Native**
+- **Como um aplicativo móvel híbrido**, utilizando **React Native**. Fique a vontade para utilizar o [Expo](https://expo.io/) ou a CLI do React Native, como descrito na [documentação](https://reactnative.dev/docs/environment-setup).
 
 ## Sobre este documento
 - O processo de envio da sua solução e os critérios que serão avaliados pela equipe de tecnologia da UmHelp estão descritos na seção **Avaliação**.
@@ -23,7 +20,7 @@ ser feita de 3 formas:
 
 Caso não tenha certeza sobre qualquer coisa explicada neste documento (ou
 qualquer dúvida em geral), fique à vontade para enviar um email para
-marcelo@umhelp.com com suas dúvidas.
+fernanda.bernardo@comadre.com.br com suas dúvidas.
 
 ## Avaliação
 Seu desafio deverá ser disponibilizado por meio de um repositório Git
@@ -75,8 +72,6 @@ esforço necessário para alterar seu código e busque minimizá-lo. Se eu quise
 #### Opcionais
 Os pontos a seguir são opcionais, mas apreciamos vê-los:
 - Testes unitários e de integração
-- Minificação e compressão
-- Sistema deployado e acessível via web, no caso de implementações em web app
 - Validações e erros bem estruturados
 
 #### Após o desafio técnico
@@ -104,16 +99,7 @@ Na entrevista presencial, conversaremos com você sobre a estrutura do seu códi
   - Usuário cadastra novo produto. Esse produto deve receber o id 5 (e não 7)
 
 ## Restrições
-1. Caso escolha a opção Vanilla JS, não é permitido o uso de nenhuma
-bibliioteca.
-
-2. Caso escolha a opção React, será permitido apenas o uso das bibliotecas
-React e ReactDOM. Caso prefira usar o [Create React App](https://create-react-app.dev/), 
-você poderá usar as dependências requeridas por ele. Se desejar,
-poderá usar também TypeScript.
-
-3. Caso escolha a opção React Native, será permitido apenas o uso das
-bibliotecas React e React Native.
+1. Tente utilizar o mínimo de biliotecas possíveis. De preferência, apenas as bibliotecas necessárias para inicializar o projeto (dependências do Expo e/ou React Native).
 
 Aqui, "bibliotecas" são definidas como código pronto que seja incluso no
 output que será enviado ao cliente. Ferramentas que sejam usadas apenas
