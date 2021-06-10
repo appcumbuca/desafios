@@ -9,7 +9,9 @@ chances de sucesso.
 O teste que você irá realizar consiste em elaborar um servidor de registro de
 contas e transações financeiras. Esse sistema deve conseguir receber vários
 pedidos de transação simultaneamente, registrar de forma persistente o histórico
-de transações e retornar o saldo atual de cada conta.
+de transações e retornar o saldo atual de cada conta. O sistema deve manter
+a todo momento a consistência dos dados fornecidos e ser capaz de escalar de
+forma simples.
 
 ## Sobre este documento
 - O processo de envio da sua solução e os critérios que serão avaliados pela
@@ -35,7 +37,14 @@ fazer para obter acesso a seu código.
 Uma vez que ele seja disponibilizado a nós, a avaliação de seu código será feita de acordo com os seguintes critérios, em ordem aproximada de importância:
 
 #### Ausência de bugs
-Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento
+Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento. Isso inclui ausência de bugs de concorrência.
+
+##### Consistência Concorrente de Dados 
+Como parte do critério de Ausência de Bugs, os dados do sistema devem se manter
+sempre consistentes, mesmo sob grande volume de requisições simultâneas. 
+Deve ser considerado que o sistema irá ser escalado horizontalmente, portanto
+considere que os dados devem se manter consistentes mesmo sob modificações 
+concorrentes.
 
 #### Legibilidade e Formatação
 Lembre-se que um trecho de código em geral será lido muito mais vezes do que
@@ -85,10 +94,10 @@ A interface do servidor pode ser realizada através do padrão de API de escolha
 do candidato (alguns exemplos são os padrões REST, GraphQL e gRPC), desde que se atenha aos
 requisitos especificados aqui.
 
-### Endpoints
+### Funcionalidades
 
-Independentemente da tecnologia escolhida para realizar a API, ela deve expor
-endpoints permitindo realizar as operações descritas abaixo.
+Independentemente da tecnologia escolhida para realizar a API, a interface exposta
+deve permitir - de forma clara - realizar as operações descritas abaixo. Recomendamos documentar como realizar as operações no README do seu projeto para facilitar os testes que realizaremos.
 
 #### Cadastro de conta
 
@@ -122,10 +131,12 @@ Neste endpoint, deve ser visualizado o saldo do usuário logado.
 
 ## Regras de negócio
 
-1. Uma transação só deve ser realizada caso haja saldo suficiente na conta do usuário para realizá-la.
-2. Após a realização de uma transação, a conta do usuário enviante deve ter seu valor descontado do valor da transação e a do usuário recebedor acrescentada do valor da transação.
-3. Todas as transações realizadas devem ser registradas no banco de dados.
-4. Caso todas as transações no banco de dados sejam realizadas novamente a partir do estado inicial de todas as contas, os saldos devem equivaler aos saldos expostos na interface.
+1. Não deve ser possível forjar um token de autenticação. Os tokens devem identificar de forma única o usuário logado.
+2. Uma transação só deve ser realizada caso haja saldo suficiente na conta do usuário para realizá-la.
+3. Após a realização de uma transação, a conta do usuário enviante deve ter seu valor descontado do valor da transação e a do usuário recebedor acrescentada do valor da transação.
+4. Todas as transações realizadas devem ser registradas no banco de dados.
+5. Caso todas as transações no banco de dados sejam realizadas novamente a partir do estado inicial de todas as contas, os saldos devem equivaler aos saldos expostos na interface.
+6. Uma transação só pode ser estornada uma vez.
 
 ## Entidades
 
