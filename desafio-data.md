@@ -41,12 +41,11 @@ Então uma sequência de DNA `GGCTA` deveria ser transcrita em uma sequência `C
 
 A sequência de Fibonacci é definida recursivamente:
 
-$$\begin{cases}
+```
 x_1 = 1 \\
 x_2 = 1 \\
-x_n = x_{n-1} + x_{n-2}\, ;  \, n > 2
-\end{cases}$$
-
+x_n = x_{n-1} + x_{n-2} ;   n > 2
+```
 - Primeira parte: Implemente uma função `fibonacci(n)` que retorna o n-ésimo termo da sequência de Fibonacci.
 - Segunda parte: Implemente uma função `fibonacci_seq(n)` que retorna a sequência de Fibonacci até o seu n-ésimo termo.
 
