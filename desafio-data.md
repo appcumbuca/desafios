@@ -59,7 +59,7 @@ A biblioteca `nyclfights13`, disponível para Python e R, traz cinco tabelas com
 - `airlines` descreve as empresas aéreas operando
 - `weather` dá medidas climáticas de hora em hora para o três aeroportos da cidade
 
-Todas as tabelas podem ser conectada usando as chaves apropriadas. Por exemplo, a aeronave de cada voo na tabela `flights` está identificada na variável `tailnum`, que também identifica unicamente cada linha na tabela `planes`.
+Todas as tabelas podem ser conectadas usando as chaves apropriadas. Por exemplo, a aeronave de cada voo na tabela `flights` está identificada na variável `tailnum`, que também identifica unicamente cada linha na tabela `planes`.
 
 Com base nesse conjunto de dados, gere um *dataframe* com as informações pertinentes para cada item:
 
