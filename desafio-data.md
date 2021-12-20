@@ -18,7 +18,7 @@ Algumas das questões que serão avaliadas, entre outras, são:
 
 Diferenciais:
 
-- Uso dos padrões e semântica sugeridos pelo seu framework de Data Science de escolha (e.g. pandas, tidyverse, data.table, polars, DataFrames, DataFramesMeta, etc).
+- Uso dos padrões e semântica sugeridos pelo seu framework de Data Science de escolha (e.g. pandas, tidyverse, data.table, polars, etc).
 - Testes unitários para as suas soluções.
 - Usar ideias de programação funcional.
 
