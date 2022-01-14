@@ -1,5 +1,5 @@
 # Desafio de Programação Front-End
-Olá e muitíssimo obrigada pelo interesse na Comadre! Somos uma startup em
+Olá e muitíssimo obrigada pelo interesse na Cumbuca! Somos uma startup em
 rápido crescimento, e sempre buscamos pessoas boas para compor nossa equipe de
 tecnologia. Esperamos ter você a bordo com a gente em breve!
 
@@ -12,7 +12,7 @@ permitir que a pessoa usuária edite uma lista de produtos. Essa implementação
 - **Como um aplicativo móvel híbrido**, utilizando **React Native**. Fique a vontade para utilizar o [Expo](https://expo.io/) ou a CLI do React Native, como descrito na [documentação](https://reactnative.dev/docs/environment-setup).
 
 ## Sobre este documento
-- O processo de envio da sua solução e os critérios que serão avaliados pela equipe de tecnologia da Comadre estão descritos na seção **Avaliação**.
+- O processo de envio da sua solução e os critérios que serão avaliados pela equipe de tecnologia da Cumbuca estão descritos na seção **Avaliação**.
 - As regras que o sistema deve seguir estão descritas na seção **Regras de negócio**.
 - Algumas restrições adicionais estão descritas na seção **Restrições**.
 - A interface a ser implementada está descrita na seção **Interface**.
@@ -20,13 +20,13 @@ permitir que a pessoa usuária edite uma lista de produtos. Essa implementação
 
 Caso não tenha certeza sobre qualquer coisa explicada neste documento (ou
 qualquer dúvida em geral), fique à vontade para enviar um email para
-fernanda.bernardo@comadre.com.br com suas dúvidas.
+fernanda@cumbuca.com com suas dúvidas.
 
 ## Avaliação
 Seu desafio deverá ser disponibilizado por meio de um repositório Git
 (podendo este ser hosteado da forma que for mais conveniente a você, por
 exemplo usando uma plataforma como GitHub ou GitLab). A única restrição é que
-o repositório deve ser acessível à equipe da Comadre. Caso não queira
+o repositório deve ser acessível à equipe da Cumbuca. Caso não queira
 disponibilizar seu código publicamente, converse conosco sobre como podemos
 fazer para obter acesso a seu código.
 
