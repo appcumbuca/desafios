@@ -1,5 +1,5 @@
 # Desafio de Programação Back-End
-Olá e muitíssimo obrigado pelo interesse na Comadre! Somos uma startup em rápido
+Olá e muitíssimo obrigado pelo interesse na Cumbuca! Somos uma startup em rápido
 crescimento, e sempre buscamos pessoas boas para compor nossa equipe de
 tecnologia. Esperamos ter você a bordo conosco em breve!
 
@@ -15,7 +15,7 @@ forma simples.
 
 ## Sobre este documento
 - O processo de envio da sua solução e os critérios que serão avaliados pela
-equipe de tecnologia da Comadre estão descritos abaixo, na seção **Avaliação**.
+equipe de tecnologia da Cumbuca estão descritos abaixo, na seção **Avaliação**.
 - A interface que deve ser exposta pelo servidor está descrita na seção **Interface**.
 - As regras que o sistema deve seguir estão descritas na seção **Regras de
 Negócio**.
@@ -23,13 +23,13 @@ Negócio**.
 
 Caso não tenha certeza sobre qualquer coisa explicada neste documento (ou
 qualquer dúvida em geral), fique à vontade para enviar um email para
-tech@comadre.com.br com suas dúvidas.
+tech@cumbuca.com com suas dúvidas.
 
 ## Avaliação
 Seu desafio deverá ser disponibilizado por meio de um repositório Git
 (podendo este ser hosteado da forma que for mais conveniente a você, por
 exemplo usando uma plataforma como GitHub ou GitLab). A única restrição é que
-o repositório deve ser acessível à equipe da Comadre. Caso não queira
+o repositório deve ser acessível à equipe da Cumbuca. Caso não queira
 disponibilizar seu código publicamente, converse conosco sobre como podemos
 fazer para obter acesso a seu código.
 
