@@ -1,4 +1,4 @@
-# Desafio de Programação Front-End
+# Desafio de Programação Mobile
 Olá e muitíssimo obrigada pelo interesse na Cumbuca! Somos uma startup em
 rápido crescimento, e sempre buscamos pessoas boas para compor nossa equipe de
 tecnologia. Esperamos ter você a bordo com a gente em breve!
