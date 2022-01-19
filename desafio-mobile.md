@@ -7,9 +7,7 @@ Pedimos que leia este documento **inteiro** com atenção para maximizar suas
 chances de sucesso.
 
 O teste que você irá realizar consiste em elaborar uma interface que irá
-permitir que a pessoa usuária edite uma lista de produtos. Essa implementação deve ser feita:
-
-- **Como um aplicativo móvel híbrido**, utilizando **React Native**. Fique a vontade para utilizar o [Expo](https://expo.io/) ou a CLI do React Native, como descrito na [documentação](https://reactnative.dev/docs/environment-setup).
+permitir que a pessoa usuária edite uma lista de produtos. Essa implementação deve ser feita **Como um aplicativo móvel híbrido**, utilizando **React Native**. Fique a vontade para utilizar o [Expo](https://expo.io/) ou a CLI do React Native, como descrito na [documentação](https://reactnative.dev/docs/environment-setup).
 
 ## Sobre este documento
 - O processo de envio da sua solução e os critérios que serão avaliados pela equipe de tecnologia da Cumbuca estão descritos na seção **Avaliação**.
@@ -20,7 +18,7 @@ permitir que a pessoa usuária edite uma lista de produtos. Essa implementação
 
 Caso não tenha certeza sobre qualquer coisa explicada neste documento (ou
 qualquer dúvida em geral), fique à vontade para enviar um email para
-fernanda@cumbuca.com com suas dúvidas.
+tech@cumbuca.com com suas dúvidas.
 
 ## Avaliação
 Seu desafio deverá ser disponibilizado por meio de um repositório Git
@@ -34,7 +32,7 @@ fazer para obter acesso a seu código.
 Uma vez que ele seja disponibilizado a nós, a avaliação de seu código será feita de acordo com os seguintes critérios, em ordem aproximada de importância:
 
 #### Ausência de bugs
-Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento
+Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento.
 
 #### Responsividade
 A sua interface deve adaptar-se a dispositivos e tamanhos de tela distintos, independente do dispositivos utilizado para acessar o conteúdo, apresentando uma interface adequada a cada tamanho de tela.
@@ -69,22 +67,22 @@ Escreva seu código como se ele fosse ser mantido por muito tempo após você
 criá-lo, por várias pessoas com níveis de experiência variados. Pense no
 esforço necessário para alterar seu código e busque minimizá-lo. Se eu quiser mudar apenas um aspecto do código, precisarei mudar quantas partes dele?
 
-#### Opcionais
-Os pontos a seguir são opcionais, mas apreciamos vê-los:
-- Testes unitários e de integração
-- Validações e erros bem estruturados
+#### Testes
+**ATENÇÃO**: Caso esteja realizando este teste no nível **Júnior**, a presença de testes é opcional. Para os níveis **Pleno** e **Sênior**, testes são **obrigatórios**.
+
+Esperamos que o código esteja testado de forma a validar as regras de negócio aqui descritas e o funcionamento correto do código.
 
 #### Após o desafio técnico
 Em geral, iremos avaliar seu código poucos dias após o envio. Uma vez que nossa
 avaliação esteja completa, iremos enviar um feedback sobre sua resolução. Caso
 seu código seja aprovado, além do feedback, iremos marcar uma data para uma
-entrevista presencial ou uma conversa por videochamada com você.
+conversa por videochamada com você.
 
-#### Entrevista (presencial/vídeochamada)
-Na entrevista presencial, conversaremos com você sobre a estrutura do seu código e as escolhas feitas por você. Esteja pronta(o) para explicar as decisões que tomou e conversar sobre alternativas. Alguns tópicos nos quais iremos tocar (mas não os únicos) serão: estruturas de interfaces, arquitetura de código, escolha de mecanismos de gestão de estado e de persistência, etc. Além disso, poderemos mudar as condições do desafio e perguntar o que você teria feito diferentemente.
+#### Conversa pós-entrega
+Após a entrega de seu desafio, conversaremos com você sobre a estrutura do seu código e as escolhas feitas por você. Esteja pronta(o) para explicar as decisões que tomou e conversar sobre alternativas. Alguns tópicos nos quais iremos tocar (mas não os únicos) serão: estruturas de interfaces, arquitetura de código, escolha de mecanismos de gestão de estado e de persistência, etc. Além disso, poderemos mudar as condições do desafio e perguntar o que você teria feito diferentemente.
 
 ## Regras de negócio
-1. Uma vez que a lista de produtos é modificada, a alteração deve ser localmente persistida. Isto é, se o usuário atualizar a página, a lista de produtos na qual ele estava trabalhando deve continuar como estava antes da atualização.
+1. Uma vez que a lista de produtos é modificada, a alteração deve ser localmente persistida. Isto é, se o usuário sair do aplicativo, a lista de produtos na qual ele estava trabalhando deve continuar como estava antes da atualização.
 2. Uma vez que seja inserido texto na barra de busca, a lista de produtos deve exibir apenas os produtos cujo nome corresponda (total ou parcialmente) ao texto inserido na barra. Isso não deve afetar a lista de produtos, afetando apenas quais produtos da lista são exibidos.
 3. O id do produto não deve ser fornecido através de campo: Ao invés disso, o produto deve receber um id sequencial, iniciando em 1.
 4. Caso o usuário tente criar um produto e os inputs nos campos do formulário de input não corresponderem aos tipos especificados na entidade Produto, deve ser exibido um erro.
@@ -107,7 +105,6 @@ pelo desenvolvedor como minificadores ou pré-processadores ainda são
 permitidas.
 
 
-
 ## Interface
 Os detalhes gráficos da interface não serão especificados por nós. Você pode implementar a interface como desejar - apenas atente-se às consequências de usabilidade de suas escolhas. Segue a descrição funcional da interface a ser implementada:
 
@@ -122,7 +119,7 @@ Cada item deve:
 - exibir um controle que permita incrementar ou decrementar a quantidade em estoque daquele item
 - exibir um controle que permita a remoção daquele item
 
-_Opcional_: os itens devem poder ser reordenados através de “arrastar e soltar” (_drag-and-drop_).
+Caso esteja realizando este teste no nível **Pleno** ou **Sênior**, os itens devem poder ser reordenados através de “arrastar e soltar” (_drag-and-drop_).
 
 ## Entidades
 

@@ -1,14 +1,12 @@
 # Desafio de Programação Back-End
-Olá e muitíssimo obrigado pelo interesse na Cumbuca! Somos uma startup em rápido
-crescimento, e sempre buscamos pessoas boas para compor nossa equipe de
-tecnologia. Esperamos ter você a bordo conosco em breve!
+Olá e muito obrigado pelo seu interesse na Cumbuca! Somos uma fintech que busca ajudar as pessoas a organizar as finanças junto de quem elas amam, simplificando a vida de nossos usuário e ajudando-os a organizarem-se financeiramente. No âmbito dessa missão, sempre buscamos pessoas excepcionais para nossa equipe. Esperamos ter você a bordo conosco em breve!
 
 Pedimos que leia este documento **inteiro** com atenção para maximizar suas
 chances de sucesso.
 
 O teste que você irá realizar consiste em elaborar um servidor de registro de
 contas e transações financeiras. Esse sistema deve conseguir receber vários
-pedidos de transação simultaneamente, registrar de forma persistente o histórico
+pedidos de transação **simultaneamente**, registrar de forma persistente o histórico
 de transações e retornar o saldo atual de cada conta. O sistema deve manter
 a todo momento a consistência dos dados fornecidos e ser capaz de escalar de
 forma simples.
@@ -39,11 +37,13 @@ Uma vez que ele seja disponibilizado a nós, a avaliação de seu código será 
 #### Ausência de bugs
 Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento. Isso inclui ausência de bugs de concorrência.
 
-##### Consistência Concorrente de Dados 
+##### Consistência Concorrente de Dados
+**ATENÇÃO**: Caso esteja realizando este teste para a vaga no nível **Júnior**, este sub-requisito é **opcional**. Para os níveis **Pleno** e **Sênior**, ele é **obrigatório**.
+
 Como parte do critério de Ausência de Bugs, os dados do sistema devem se manter
-sempre consistentes, mesmo sob grande volume de requisições simultâneas. 
+sempre consistentes, mesmo sob grande volume de requisições simultâneas.
 Deve ser considerado que o sistema irá ser escalado horizontalmente, portanto
-considere que os dados devem se manter consistentes mesmo sob modificações 
+considere que os dados devem se manter consistentes mesmo sob modificações
 concorrentes.
 
 #### Legibilidade e Formatação
@@ -73,8 +73,9 @@ Escreva seu código como se ele fosse ser mantido por muito tempo após você
 criá-lo, por várias pessoas com níveis de experiência variados. Pense no
 esforço necessário para alterar seu código e busque minimizá-lo. Se eu quiser mudar apenas um aspecto do código, precisarei mudar quantas partes dele?
 
-#### Opcionais
-Os pontos a seguir são opcionais, mas apreciamos vê-los:
+#### Adicionais
+**ATENÇÃO**: Caso esteja realizando o teste no nível **Sênior**, a presença de testes unitários e de integração é **obrigatória**.
+
 - Testes unitários e de integração
 - Sistema deployado em algum provedor de cloud
 - Validações e erros bem estruturados
@@ -83,10 +84,10 @@ Os pontos a seguir são opcionais, mas apreciamos vê-los:
 Em geral, iremos avaliar seu código poucos dias após o envio. Uma vez que nossa
 avaliação esteja completa, iremos enviar um feedback sobre sua resolução. Caso
 seu código seja aprovado, além do feedback, iremos marcar uma data para uma
-entrevista presencial ou uma conversa por videochamada com você.
+conversa por videochamada com você.
 
-#### Entrevista presencial
-Na entrevista presencial, conversaremos com você sobre a estrutura do seu código e as escolhas feitas por você. Esteja pronta(o) para explicar as decisões que tomou e conversar sobre alternativas. Alguns tópicos nos quais iremos tocar (mas não os únicos) serão: escolha de bancos de dados, estruturas de interfaces, arquitetura de código. Além disso, poderemos mudar as condições do desafio e perguntar o que você teria feito diferentemente.
+#### Conversa pós-entrega
+Após a entrega de seu desafio, conversaremos com você sobre a estrutura do seu código e as escolhas feitas por você. Esteja pronta(o) para explicar as decisões que tomou e conversar sobre alternativas. Alguns tópicos nos quais iremos tocar (mas não os únicos) serão: escolha de bancos de dados, estruturas de interfaces, arquitetura de código. Além disso, poderemos mudar as condições do desafio e perguntar o que você teria feito diferentemente.
 
 ## Interface
 
@@ -107,7 +108,7 @@ Neste endpoint, devem ser enviados os dados de uma conta e ela deve ser cadastra
 
 Neste endpoint, devem ser enviados os dados de login de uma conta já cadastrada.
 Esses dados devem ser validados e deve ser retornado um token que será utilizado
-para validar transações do usuário. Nos próximos endpoints, o token deve ser 
+para validar transações do usuário. Nos próximos endpoints, o token deve ser
 enviado para identificar o usuário logado.
 
 #### Cadastro de transação
@@ -117,6 +118,7 @@ cadastrada na base de transações, caso ela seja feita entre contas válidas e
 caso haja saldo suficiente na conta do usuário logado para realização dela.
 
 #### Estorno de transação
+**ATENÇÃO**: Caso esteja realizando este teste no nível **Júnior** ou **Pleno**, este endpoint é **opcional**.
 
 Neste endpoint, deve ser enviado o ID de uma transação já cadastrada e os efeitos dessa transação devem ser revertidos, caso seja possível e a transação tenha sido iniciada pelo usuário logado.
 
@@ -135,7 +137,7 @@ Neste endpoint, deve ser visualizado o saldo do usuário logado.
 2. Uma transação só deve ser realizada caso haja saldo suficiente na conta do usuário para realizá-la.
 3. Após a realização de uma transação, a conta do usuário enviante deve ter seu valor descontado do valor da transação e a do usuário recebedor acrescentada do valor da transação.
 4. Todas as transações realizadas devem ser registradas no banco de dados.
-5. Caso todas as transações no banco de dados sejam realizadas novamente a partir do estado inicial de todas as contas, os saldos devem equivaler aos saldos expostos na interface.
+5. Caso todas as transações no banco de dados sejam realizadas novamente a partir do estado inicial de todas as contas, os saldos devem equivaler aos saldos expostos na interface. Em outros termos: Para toda conta, se somarmos os valores de todas as transações no histórico dela a qualquer momento, o saldo total da conta deve ser o saldo atual.
 6. Uma transação só pode ser estornada uma vez.
 
 ## Entidades
