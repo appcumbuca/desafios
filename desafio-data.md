@@ -41,7 +41,7 @@ Na sua solução apresente alguma análise exploratória preeliminar, justifique
 
 Se fizer o desafio em python, implemente uma classe e métodos apropriados. Se fizer em R, defina um conjunto de funções que operam sobre a estrutura de dados e uma função que instancia a estrutura.
 
-## Primeira Parte
+### Primeira Parte
 
 Uma stack é uma sequência de elementos operando sob regime *Last In First Out* (LIFO). Uma stack é instanciada vazia e permite duas operações: `push`, que insere um valor no topo da stack e `pop` que remove o elemento no topo da pilha.
 
@@ -66,7 +66,7 @@ A sequência de operações:
 
  Deveria resultar numa stack com os elementos `1, 3`, nessa ordem.
 
-## Segunda Parte
+### Segunda Parte
 
 Adicione uma terceira operação na sua implementação, `get`, que não altera o conteúdo da stack, apenas retorna o valor no topo.
 
