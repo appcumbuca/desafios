@@ -1,5 +1,3 @@
-# Desafio Data
-
 O desafio pode ser feito em python ou R e para a entrega devem ser anexados os seguintes arquivos em um email para `data@cumbuca.com.br`:
 
 - Arquivo com o código para gerar um notebook com as respostas
@@ -8,74 +6,72 @@ O desafio pode ser feito em python ou R e para a entrega devem ser anexados os s
 
 # Critérios de Avaliação
 
-A avaliação é holística e irá considerar o todo do que for apresentado. É melhor apresentar algum esboço de solução do que nada. É melhor apresentar uma solução ineficiente que funciona do que um esboço de uma solução eficiente. É melhor apresentar uma solução com espaço para melhoras, clara e fácil de modificar do que uma solução otimizada, complexa e de difícil extensão. 
+A avaliação é holística e irá considerar o todo do que for apresentado. É melhor apresentar algum esboço de solução do que nada. É melhor apresentar uma solução ineficiente que funciona do que um esboço de uma solução eficiente. É melhor apresentar uma solução com espaço para melhoras, clara e fácil de modificar do que uma solução otimizada, complexa e de difícil extensão.
 
 Algumas das questões que serão avaliadas, entre outras, são:
 
 - Se os requisitos do problema forem levemente alterados basta alterar levemente a sua solução original?
 - O código é internamente consistente nas suas escolhas estéticas, de indentação e fácil de ler? Considere tamanho e possíveis ambiguidades dos nomes que usar para entidades no seu código.
-- O código consiste de componentes reutilizáveis que podem ser aplicados em outros contextos? Scripts são reutilizáveis, mas não são componentes, funções (ou classes com métodos) são componentes reutilizáveis.
 
 Diferenciais:
 
 - Uso dos padrões e semântica sugeridos pelo seu framework de Data Science de escolha (e.g. pandas, tidyverse, data.table, polars, etc).
-- Testes unitários para as suas soluções.
-- Usar ideias de programação funcional.
+- Testes unitários para as suas soluções usando algum framework de testes (e.g. `testthat, unittest, pytest`)
+- Usar ideias e técnicas de programação funcional.
 
-# Problemas
+## Consultando uma API
 
-# Transcrição DNA → RNA
+A [Base dos Dados]([https://basedosdados.org/](https://basedosdados.org/)) é um datalake sediado na Google BigQuery com vários conjuntos de dados públicos normalizados, tratados e padronizados. A API deles, que segue o padrão CKAN, disponibiliza vários endpoints HTTP para consultas aos metadados do datalake. A documentação completa da API pode ser encontrada [aqui]([https://basedosdados.org/openapi](https://basedosdados.org/openapi)). 
 
-Os quatro nucleotídeos encontrados no DNA são adenina (A), citosina (C), guanina (G) e timina (T). Os nucleotídeos no RNA são adenina (A), citosina (C), guanina (G) e uracila (U). 
+Construa uma função ou método que recebe um argumento `keyword` e retorna o resultado da consulta com o método `GET` ao endpoint **`bd_dataset_search`** usando o termo de busca passado como argumento.
 
-A transcrição de DNA em RNA acontece com as seguintes associações:
+# Um modelo de classificação
 
-- `G` -> `C`
-- `C` -> `G`
-- `T` -> `A`
-- `A` -> `U`
+A biblioteca `palmerpenguins` (disponível em python e R) contém uma base de dados com medidas de cerca de 300 espécimes de três espécies de penguins habitando três ilhas do Atlântico Sul coletados em 2007 e 2008. Estime um modelo de classificação para a espécie de cada penguins a partir da base disponível, reporte sua Matriz de Confusão e F1-score ponderada. Justifique sua escolha de técnica de ponderação.
 
-Então uma sequência de DNA `GGCTA` deveria ser transcrita em uma sequência `CCGAU` de RNA. Implemente uma função `dna_to_rna(dna)` que recebe uma string com uma sequência de DNA (e.g. `"ACTGATA"`) e retorna outra string, com sua transcrição em RNA (e.g. `"UGACUAU"`)
+Na sua solução apresente alguma análise exploratória preeliminar, justifique sua escolha de modelo com base no problema apresentado, limitações de amostra, dados disponíveis e padrões encontrados na análise exploratória. A concisão e clareza da justificativa será considerada.
 
-# Fibonacci
+# Stacks
 
-A sequência de Fibonacci é definida recursivamente:
+Se fizer o desafio em python, implemente uma classe e métodos apropriados. Se fizer em R, defina um conjunto de funções que operam sobre a estrutura de dados e uma função que instancia a estrutura.
 
-```
-x_1 = 1 
-x_2 = 1
-x_n = x_{n-1} + x_{n-2} ; n > 2
-```
-- Primeira parte: Implemente uma função `fibonacci(n)` que retorna o n-ésimo termo da sequência de Fibonacci.
-- Segunda parte: Implemente uma função `fibonacci_seq(n)` que retorna a sequência de Fibonacci até o seu n-ésimo termo.
+## Primeira Parte
 
-# Processando e explorando dados em um banco relacional
+Uma stack é uma sequência de elementos operando sob regime *Last In First Out* (LIFO). Uma stack é instanciada vazia e permite duas operações: `push`, que insere um valor no topo da stack e `pop` que remove o elemento no topo da pilha.
 
-A biblioteca `nyclfights13`, disponível para Python e R, traz cinco tabelas com dados de voos que passaram pela cidade de Nova Iorque em 2013. A documentação da biblioteca descreve o que significa cada coluna em cada tabela, mas resumidamente:
+A sequência de operações:
 
-- `flights` tem um livro de voos
-- `airports` lista os aeroportos envolvidos
-- `planes` dados da construção dos aviões
-- `airlines` descreve as empresas aéreas operando
-- `weather` dá medidas climáticas de hora em hora para o três aeroportos da cidade
+- Instanciar stack
+- `push 2`
+- `push 3`
+- `pop`
 
-Todas as tabelas podem ser conectadas usando as chaves apropriadas. Por exemplo, a aeronave de cada voo na tabela `flights` está identificada na variável `tailnum`, que também identifica unicamente cada linha na tabela `planes`.
+Deveria resultar numa stack com apenas o elemento `2`.
 
-Com base nesse conjunto de dados, gere um *dataframe* com as informações pertinentes para cada item:
+A sequência de operações:
 
-- Calcule o atraso médio, bem como o desvio-padrão, a assimetria e a curtose dos atrasos em cada dia do ano. Plote um gráfico com as séries históricas de média e desvio-padrão.
-- Quantos voos foram feitos em segundas-feiras com aviões fabricados em anos bissextos? Plote um gráfico de barras com os valores para cada ano.
-- Quantos voos cada empresa aérea operou por aeroporto?
-- Mude o formato da resposta do item anterior de *long* para *wide* (dica: atenção com o número de colunas resultante).
-- Qual o percentual de voos que decolou em condições de visibilidade abaixo da média (use como referência a visibilidade média do ano todo) em cada aeroporto, no mês de dezembro?
+- Instanciar stack
+- `push 1`
+- `push 2`
+- `pop`
+- `push 3`
+- `push 4`
+- `pop`
 
-# Um pouco de Estatística Computacional
+ Deveria resultar numa stack com os elementos `1, 3`, nessa ordem.
 
-- Implemente uma função que sorteia números aleatoriamente de uma Distribuição Uniforme entre 0 e 1 até que a soma dos valores sorteados seja maior que 1 e retorna a quantidade de números sorteados.
+## Segunda Parte
 
-Exemplos:
-    - Sorteio: `0.1, 0.3, 0.22, 0.9, 0.07, 0.63`, resultado: 4
-    - Sorteio: `0.84, 0.33, 0.91, 0.12, 0.41`, resultado: 2
-- Realize vários ensaios do experimento acima e reporte a média dos resultados. Plote um gráfico relacionando a diferença entre a média e o número de Euler com o número de ensaios realizados.
-- Se o experimento for modificado para medir quantos números são sorteados da mesma distribuição até sua soma seja maior que 2, qual é a média dos resultados de um número grande de ensaios?
-- Se o experimento for modificado para medir quantos números são sorteados de uma Distribuição Chi-Quadrado com 1 grau de liberdade até sua soma seja maior que 3, qual é a média dos resultados de um número grande de ensaios?
+Adicione uma terceira operação na sua implementação, `get`, que não altera o conteúdo da stack, apenas retorna o valor no topo.
+
+A sequência de operações:
+
+- Instanciar stack
+- `push 1`
+- `push 2`
+- `pop`
+- `push 3`
+- `push 4`
+- `get`
+
+Deveria retornar o valor `4`.
