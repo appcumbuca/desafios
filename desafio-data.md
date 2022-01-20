@@ -21,9 +21,15 @@ Diferenciais:
 
 ## Consultando uma API
 
-A [Base dos Dados]([https://basedosdados.org/](https://basedosdados.org/)) é um datalake sediado na Google BigQuery com vários conjuntos de dados públicos normalizados, tratados e padronizados. A API deles, que segue o padrão CKAN, disponibiliza vários endpoints HTTP para consultas aos metadados do datalake. A documentação completa da API pode ser encontrada [aqui]([https://basedosdados.org/openapi](https://basedosdados.org/openapi)). 
+A [Base dos Dados]([https://basedosdados.org/](https://basedosdados.org/)) é uma coleção de bases de dados públicas organizadas hierarquicamente, padronizadas e com metadados enriquecidos no padrão CKAN, atualmente no ar em uma instância no Google BigQuery. A organização disponibiliza uma API no padrão CKAN com vários endpoints HTTP para consultas aos metadados do datalake. A documentação completa da API pode ser encontrada [aqui]([https://basedosdados.org/openapi](https://basedosdados.org/openapi)). 
 
-Construa uma função ou método que recebe um argumento `keyword` e retorna o resultado da consulta com o método `GET` ao endpoint **`bd_dataset_search`** usando o termo de busca passado como argumento.
+### Primeira Parte
+
+Construa uma função ou método que recebe um argumento `keyword` e retorna o resultado da consulta com o método `GET` ao endpoint **`bd_dataset_search`** usando o termo de busca passado como argumento. Retorne a resposta completa da requisição.
+
+### Segunda Parte 
+
+Modique a solução da resposta anterior para que seja retornado apenas o nome das bases encontradas na busca. Utilize uma estrutura de dados compatível. 
 
 # Um modelo de classificação
 
