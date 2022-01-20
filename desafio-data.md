@@ -29,7 +29,7 @@ Construa uma função ou método que recebe um argumento `keyword` e retorna o r
 
 ### Segunda Parte 
 
-Modique a solução da resposta anterior para que seja retornado apenas o nome das bases encontradas na busca. Utilize uma estrutura de dados compatível. 
+Modique a solução da resposta anterior para que seja retornado apenas o nome das bases encontradas na busca. 
 
 # Um modelo de classificação
 
