@@ -43,7 +43,7 @@ Se fizer o desafio em python, implemente uma classe e métodos apropriados. Se f
 
 ### Primeira Parte
 
-Uma stack é uma sequência de elementos operando sob regime *Last In First Out* (LIFO). Uma stack é instanciada vazia e permite duas operações: `push`, que insere um valor no topo da stack e `pop` que remove o elemento no topo da pilha.
+Uma stack é uma sequência de elementos operando sob regime *Last In First Out* (LIFO). Uma stack é instanciada vazia e permite duas operações: `push`, que insere um valor no topo da stack e `pop` que remove o elemento no topo.
 
 A sequência de operações:
 
