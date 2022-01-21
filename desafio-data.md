@@ -15,11 +15,10 @@ Algumas das questões que serão avaliadas, entre outras, são:
 
 Diferenciais:
 
-- Uso dos padrões e semântica sugeridos pelo seu framework de Data Science de escolha (e.g. pandas, tidyverse, data.table, polars, etc).
 - Testes unitários para as suas soluções usando algum framework de testes (e.g. `testthat, unittest, pytest`)
 - Usar ideias e técnicas de programação funcional.
 
-## Consultando uma API
+# Consultando uma API
 
 A [Base dos Dados]([https://basedosdados.org/](https://basedosdados.org/)) é uma coleção de bases de dados públicas organizadas hierarquicamente, padronizadas e com metadados enriquecidos no padrão CKAN, atualmente no ar em uma instância no Google BigQuery. A organização disponibiliza uma API no padrão CKAN com vários endpoints HTTP para consultas aos metadados do datalake. A documentação completa da API pode ser encontrada [aqui]([https://basedosdados.org/openapi](https://basedosdados.org/openapi)). 
 
@@ -33,9 +32,9 @@ Modique a solução da resposta anterior para que seja retornado apenas o nome d
 
 # Um modelo de classificação
 
-A biblioteca `palmerpenguins` (disponível em python e R) contém uma base de dados com medidas de cerca de 300 espécimes de três espécies de penguins habitando três ilhas do Atlântico Sul coletados em 2007 e 2008. Estime um modelo de classificação para a espécie de cada penguins a partir da base disponível, reporte sua Matriz de Confusão e F1-score ponderada. Justifique sua escolha de técnica de ponderação.
+A biblioteca `palmerpenguins` (disponível em python e R) contém uma base de dados com medidas de cerca de 300 espécimes de três espécies de penguins habitando três ilhas do Atlântico Sul coletados em 2007 e 2008. Estime um modelo de classificação para a espécie de cada penguins a partir da base disponível, reporte sua Matriz de Confusão, AUROC e F1-score ponderada. Escolha e justifique uma técnica de ponderação para encontrar o valor das duas métricas pedidas.
 
-Na sua solução apresente alguma análise exploratória preeliminar, justifique sua escolha de modelo com base no problema apresentado, limitações de amostra, dados disponíveis e padrões encontrados na análise exploratória. A concisão e clareza da justificativa será considerada.
+Na sua solução apresente alguma análise exploratória preeliminar e justifique concisamente sua escolha de modelo considerando o problema apresentado, limitações de amostra e padrões encontrados na análise exploratória.
 
 # Stacks
 
