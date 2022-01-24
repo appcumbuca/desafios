@@ -20,7 +20,7 @@ Diferenciais:
 
 # Consultando uma API
 
-A [Base dos Dados]([https://basedosdados.org/](https://basedosdados.org/)) é uma coleção de bases de dados públicas organizadas hierarquicamente, padronizadas e com metadados enriquecidos no padrão CKAN, atualmente no ar em uma instância no Google BigQuery. A organização disponibiliza uma API no padrão CKAN com vários endpoints HTTP para consultas aos metadados do datalake. A documentação completa da API pode ser encontrada [aqui]([https://basedosdados.org/openapi](https://basedosdados.org/openapi)). 
+A [Base dos Dados](https://basedosdados.org/) é uma coleção de bases de dados públicas organizadas hierarquicamente, padronizadas e com metadados enriquecidos no padrão CKAN, atualmente no ar em uma instância no Google BigQuery. A organização disponibiliza uma API no padrão CKAN com vários endpoints HTTP para consultas aos metadados do datalake. A documentação completa da API pode ser encontrada [aqui](https://basedosdados.org/openapi). 
 
 ### Primeira Parte
 
