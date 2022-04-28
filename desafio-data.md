@@ -1,4 +1,4 @@
-O desafio pode ser feito em python ou R e para a entrega devem ser anexados os seguintes arquivos em um email para `data@cumbuca.com.br`:
+O desafio pode ser feito em python ou R e para a entrega devem ser anexados os seguintes arquivos em um email respondendo à Fê Bernardo na data solicitada:
 
 - Arquivo com o código para gerar um notebook com as respostas
 - Documento resultante do notebook renderizado em PDF
@@ -6,77 +6,48 @@ O desafio pode ser feito em python ou R e para a entrega devem ser anexados os s
 
 # Critérios de Avaliação
 
-A avaliação é holística e irá considerar o todo do que for apresentado. É melhor apresentar algum esboço de solução do que nada. É melhor apresentar uma solução ineficiente que funciona do que um esboço de uma solução eficiente. É melhor apresentar uma solução com espaço para melhoras, clara e fácil de modificar do que uma solução otimizada, complexa e de difícil extensão.
-
 Algumas das questões que serão avaliadas, entre outras, são:
 
-- Se os requisitos do problema forem levemente alterados basta alterar levemente a sua solução original?
-- O código é internamente consistente nas suas escolhas estéticas, de indentação e fácil de ler? Considere tamanho e possíveis ambiguidades dos nomes que usar para entidades no seu código.
+- A redação das respostas é clara e concisa? Busque a “resposta mínima suficiente”.
+- Seu código é, tanto quanto plausível, separado em componentes isolados nomeados apropriadamente? Deveria ser possível, em algum nível, explicar o que o seu código faz apenas o lendo.
+- Seu código é reutilizável e basta fazer leves alterações para satisfazer mudanças pequenas nos requerimentos do problema?
 
-Diferenciais:
+# Problemas
 
-- Testes unitários para as suas soluções usando algum framework de testes (e.g. `testthat, unittest, pytest`)
-- Usar ideias e técnicas de programação funcional.
+# Transcrição DNA → RNA
 
-# Consultando uma API
+Os quatro nucleotídeos encontrados no DNA são adenina (A), citosina (C), guanina (G) e timina (T). Os nucleotídeos no RNA são adenina (A), citosina (C), guanina (G) e uracila (U). 
 
-A [Base dos Dados](https://basedosdados.org/) é uma coleção de bases de dados públicas organizadas hierarquicamente, padronizadas e com metadados enriquecidos no padrão CKAN, atualmente no ar em uma instância no Google BigQuery. A organização disponibiliza uma API no padrão CKAN com vários endpoints HTTP para consultas aos metadados do datalake. A documentação completa da API pode ser encontrada [aqui](https://basedosdados.org/openapi). 
+A transcrição de DNA em RNA acontece com as seguintes associações:
 
-### Primeira Parte
+- `G` -> `C`
+- `C` -> `G`
+- `T` -> `A`
+- `A` -> `U`
 
-Construa uma função ou método que recebe um argumento `keyword` e retorna o resultado da consulta com o método `GET` ao endpoint **`bd_dataset_search`** usando o termo de busca passado como argumento. Retorne a resposta completa da requisição.
+Então uma sequência de DNA `GGCTA` deveria ser transcrita em uma sequência `CCGAU` de RNA. Implemente uma função que recebe uma string com uma sequência de DNA (e.g. `"ACTGATA"`) e retorna outra string, com sua transcrição em RNA (e.g. `"UGACUAU"`)
 
-### Segunda Parte 
+# Processando e explorando dados em um banco relacional
 
-Modique a solução da resposta anterior para que seja retornado apenas o nome das bases encontradas na busca. 
+A biblioteca `nyclfights13`, disponível para Python e R, traz cinco tabelas com dados de voos que passaram pela cidade de Nova Iorque em 2013. A documentação da biblioteca descreve o que significa cada coluna em cada tabela, mas resumidamente:
 
-# Um modelo de classificação
+- `flights` tem um livro de voos
+- `airports` lista os aeroportos envolvidos
+- `planes` dados da construção dos aviões usados em cada voo
+- `airlines` descreve as empresas aéreas operando
+- `weather` dá medidas climáticas de hora em hora para o três aeroportos da cidade
 
-A biblioteca `palmerpenguins` (disponível em python e R) contém uma base de dados com medidas de cerca de 300 espécimes de três espécies de penguins habitando três ilhas do Atlântico Sul coletados em 2007 e 2008. Estime um modelo de classificação para a espécie de cada penguins a partir da base disponível, reporte sua Matriz de Confusão, AUROC e F1-score ponderada. Escolha e justifique uma técnica de ponderação para encontrar o valor das duas métricas pedidas.
+Todas as tabelas podem ser conectadas usando as chaves apropriadas. Por exemplo, a aeronave de cada voo na tabela `flights` está identificada na variável `tailnum`, que também identifica unicamente cada linha na tabela `planes`. Com base nesse conjunto de dados, encontre:
 
-Na sua solução apresente alguma análise exploratória preeliminar e justifique concisamente sua escolha de modelo considerando o problema apresentado, limitações de amostra e padrões encontrados na análise exploratória.
+- Gere um dataframe contendo o atraso médio, bem como o desvio-padrão e os percentis p25, p50, p90 e p99 para cada dia do ano. Explique sucintamente quais as tendências observadas ao longo do ano, clarifique que tipo de caso extremos são observados e pontue limitações da sua análise, se existirem.
+- Existe alguma empresa aérea ou grupo pequeno de empresas que concentra a maior parte dos atrasos?
+- Considerando a base como um todo, existe alguma relação entre a distancia a ser percorrida pelo voo e a fabricante do avião utilizado? Essa conclusão se mantém no nível de empresa aérea?
 
-# Stacks
+# Pensamento estatístico
 
-Se fizer o desafio em python, implemente uma classe e métodos apropriados. Se fizer em R, defina um conjunto de funções que operam sobre a estrutura de dados e uma função que instancia a estrutura.
+Suponha que uma operadora de cartão está debatendo suas regras de atribuição de limite e um stakeholder envolvido gera uma visualização cruzando limite e inadimplência. Na visualização é nítido que a taxa de inadimplência cai linearmente no limite do cartão, argumentando a favor de uma regra mais relaxada de atribuição de limite.
 
-### Primeira Parte
-
-Uma stack é uma sequência de elementos operando sob regime *Last In First Out* (LIFO). Uma stack é instanciada vazia e permite duas operações: `push`, que insere um valor no topo da stack e `pop` que remove o elemento no topo.
-
-A sequência de operações:
-
-- Instanciar stack
-- `push 2`
-- `push 3`
-- `pop`
-
-Deveria resultar numa stack com apenas o elemento `2`.
-
-A sequência de operações:
-
-- Instanciar stack
-- `push 1`
-- `push 2`
-- `pop`
-- `push 3`
-- `push 4`
-- `pop`
-
- Deveria resultar numa stack com os elementos `1, 3`, nessa ordem.
-
-### Segunda Parte
-
-Adicione uma terceira operação na sua implementação, `get`, que não altera o conteúdo da stack, apenas retorna o valor no topo.
-
-A sequência de operações:
-
-- Instanciar stack
-- `push 1`
-- `push 2`
-- `pop`
-- `push 3`
-- `push 4`
-- `get`
-
-Deveria retornar o valor `4`.
+- Sob que condições a conclusão apontada pela visualização se mantém?
+- Como você explicaria para um stakeholder os limites da conclusão tirada dessa visualização?
+- Que tipo de experimento você recomendaria para coletar evidência e respaldar essa conclusão?
+- É comum que, para garantir um poder de teste mais elevado, a escala de um experimento tome proporções estratégicas para uma empresa, já que o custo de oportunidade de perda no grupo com resultados piores é potencialmente alta. Você recomendaria o mesmo desenho de experimento se fosse esse o caso? Se não, que desenho alternativo você sugeriria?
