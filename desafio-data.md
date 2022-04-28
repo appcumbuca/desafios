@@ -39,7 +39,7 @@ A biblioteca `nyclfights13`, disponível para Python e R, traz cinco tabelas com
 
 Todas as tabelas podem ser conectadas usando as chaves apropriadas. Por exemplo, a aeronave de cada voo na tabela `flights` está identificada na variável `tailnum`, que também identifica unicamente cada linha na tabela `planes`. Com base nesse conjunto de dados, encontre:
 
-- Gere um dataframe contendo o atraso médio, bem como o desvio-padrão e os percentis p25, p50, p90 e p99 para cada dia do ano. Explique sucintamente quais as tendências observadas ao longo do ano, clarifique que tipo de caso extremos são observados e pontue limitações da sua análise, se existirem.
+- Gere um dataframe contendo o atraso médio, bem como o desvio-padrão e os percentis p25, p50, p90 e p99 para cada dia do ano. Explique sucintamente quais as tendências observadas ao longo do ano, gere quaisquer gráficos que julgar apropriados, clarifique que tipo de caso extremos são observados e pontue limitações da sua análise, se existirem.
 - Existe alguma empresa aérea ou grupo pequeno de empresas que concentra a maior parte dos atrasos?
 - Considerando a base como um todo, existe alguma relação entre a distancia a ser percorrida pelo voo e a fabricante do avião utilizado? Essa conclusão se mantém no nível de empresa aérea?
 
