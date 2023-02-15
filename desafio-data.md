@@ -43,7 +43,7 @@ A biblioteca `nyclfights13`, disponível para Python e R, traz cinco tabelas com
 
 Todas as tabelas podem ser conectadas usando as chaves apropriadas. Por exemplo, a aeronave de cada voo na tabela `flights` está identificada na variável `tailnum`, que também identifica unicamente cada linha na tabela `planes`. A documentação da biblioteca detalha quais são as informações disponíveis e como estão representadas. Com base nesse conjunto de dados:
 
-1 - Compute a média móvel 30 dias e o desvio-padrão móvel, também na janela de 30 dias, dos atrasos.
+1 - Compute a média móvel 30 dias e o desvio-padrão móvel, também na janela de 30 dias, dos atrasos. Gere uma visualização com as duas séries temporais.
 
 2 - Encontre a porcentagem de voos que atrasam mais de 5 minutos por empresa aérea, por mês. Qual foi o pior mês do ano para a Delta Airlines?
 
