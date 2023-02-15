@@ -10,7 +10,7 @@ Algumas das questões que serão avaliadas, entre outras, são:
 
 - A redação das respostas é clara e concisa? Busque a “resposta mínima suficiente”.
 - Seu código é, tanto quanto plausível, separado em componentes isolados nomeados apropriadamente? Deveria ser possível, em algum nível, explicar o que o seu código faz apenas o lendo.
-- Seu código é reutilizável e basta fazer leves alterações para satisfazer mudanças pequenas nos requerimentos do problema?
+- Seu código é extensível? O quão fácil é alterar suas soluções para atender a mudanças nos requerimentos do problema?
 
 # Problemas
 
@@ -27,6 +27,10 @@ A transcrição de DNA em RNA acontece com as seguintes associações:
 
 Então uma sequência de DNA `GGCTA` deveria ser transcrita em uma sequência `CCGAU` de RNA. Implemente uma função que recebe uma string com uma sequência de DNA (e.g. `"ACTGATA"`) e retorna outra string, com sua transcrição em RNA (e.g. `"UGACUAU"`)
 
+# Momentos Estatísticos
+
+Implemente uma função que computa o $k$-ésimo momento amostral. Suponha que a amostra será representada por uma estrutura de dados iterável como uma lista ou um vetor com as medidas da amostra. Modifique a implementação para que tenha um argumento adicional, `central` que recebe um valor lógico e caso verdadeiro, retorna o $k$-ésimo momento central.
+
 # Processando e explorando dados em um banco relacional
 
 A biblioteca `nyclfights13`, disponível para Python e R, traz cinco tabelas com dados de voos que passaram pela cidade de Nova Iorque em 2013. A documentação da biblioteca descreve o que significa cada coluna em cada tabela, mas resumidamente:
@@ -37,17 +41,14 @@ A biblioteca `nyclfights13`, disponível para Python e R, traz cinco tabelas com
 - `airlines` descreve as empresas aéreas operando
 - `weather` dá medidas climáticas de hora em hora para o três aeroportos da cidade
 
-Todas as tabelas podem ser conectadas usando as chaves apropriadas. Por exemplo, a aeronave de cada voo na tabela `flights` está identificada na variável `tailnum`, que também identifica unicamente cada linha na tabela `planes`. Com base nesse conjunto de dados, encontre:
+Todas as tabelas podem ser conectadas usando as chaves apropriadas. Por exemplo, a aeronave de cada voo na tabela `flights` está identificada na variável `tailnum`, que também identifica unicamente cada linha na tabela `planes`. A documentação da biblioteca detalha quais são as informações disponíveis e como estão representadas. Com base nesse conjunto de dados:
 
-- Gere um dataframe contendo o atraso médio, bem como o desvio-padrão e os percentis p25, p50, p90 e p99 para cada dia do ano. Explique sucintamente quais as tendências observadas ao longo do ano, gere quaisquer gráficos que julgar apropriados, clarifique que tipo de caso extremos são observados e pontue limitações da sua análise, se existirem.
-- Existe alguma empresa aérea ou grupo pequeno de empresas que concentra a maior parte dos atrasos?
-- Considerando a base como um todo, existe alguma relação entre a distancia a ser percorrida pelo voo e a fabricante do avião utilizado? Essa conclusão se mantém no nível de empresa aérea?
+1 - Compute a média móvel 30 dias e o desvio-padrão móvel, também na janela de 30 dias, dos atrasos.
 
-# Pensamento estatístico
+2 - Encontre a porcentagem de voos que atrasam mais de 5 minutos por empresa aérea, por mês. Qual foi o pior mês do ano para a Delta Airlines?
 
-Suponha que uma operadora de cartão está debatendo suas regras de atribuição de limite e um stakeholder envolvido gera uma visualização cruzando limite e inadimplência. Na visualização é nítido que a taxa de inadimplência cai linearmente no limite do cartão, argumentando a favor de uma regra mais relaxada de atribuição de limite.
+3 - Calcule quantos aviões distintos são operados e quantos voos foram realizados para cada fabricante. Qual é a fabricante com menos voos?
 
-- Sob que condições a conclusão apontada pela visualização se mantém?
-- Como você explicaria para um stakeholder os limites da conclusão tirada dessa visualização?
-- Que tipo de experimento você recomendaria para coletar evidência e respaldar essa conclusão?
-- É comum que, para garantir um poder de teste mais elevado, a escala de um experimento tome proporções estratégicas para uma empresa, já que o custo de oportunidade de perda no grupo com resultados piores é potencialmente alta. Você recomendaria o mesmo desenho de experimento se fosse esse o caso? Se não, que desenho alternativo você sugeriria?
+4 - Qual é a empresa aérea que mais realizou voos com aviões da Airbus?
+
+5 - Compute quantos voos cada aeroporto da cidade recebeu entre 18h e 22h do dia 3 de março.
