@@ -1,4 +1,4 @@
-O desafio pode ser feito em python ou R e para a entrega devem ser anexados os seguintes arquivos em um email respondendo à Fê Bernardo na data solicitada:
+O desafio pode ser feito em python ou R e para a entrega devem ser anexados os seguintes arquivos em um email respondendo à Nath Cavatoni na data solicitada:
 
 - Arquivo com o código para gerar um notebook com as respostas
 - Documento resultante do notebook renderizado em PDF
