@@ -33,7 +33,7 @@ Se tiver qualquer dúvida ou sentir que necessita fazer qualquer pergunta, sinta
 
 ## Avaliação
 ### Entrega
-Seu desafio deverá ser disponibilizado como um arquivo `.pdf` contendo as especificações das tarefas a serem executadas pela equipe de tecnologia. Esse arquivo deve ser enviado para os emails `pedrocastilho@cumbuca.com` e `rodrigo.cortez@cumbuca.com` quando completo, com o assunto `Desafio Product Owner Cumbuca`.
+Seu desafio deverá ser disponibilizado como um arquivo `.pdf` contendo as especificações das tarefas a serem executadas pela equipe de tecnologia. Esse arquivo deve ser enviado para os emails `pedrocastilho@cumbuca.com` quando completo, com o assunto `Desafio Product Owner Cumbuca`.
 
 ### Critérios
 Uma vez disponibilizado a nós, a avaliação do seu backlog será realizada de acordo com os seguintes critérios:
