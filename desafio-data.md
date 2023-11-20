@@ -14,6 +14,10 @@ Algumas das questões que serão avaliadas, entre outras, são:
 
 # Problemas
 
+# Fibonacci
+
+Implemente uma função que recebe como argumento um inteiro não-negativo `n` e retorna apenas o $n$-ésimo número da [Sequência de Fibonacci](https://en.wikipedia.org/wiki/Fibonacci_sequence). Implemente uma outra função que recebe um argumento `n` equivalente, mas retorna os `n` primeiros números da sequência de Fibonacci.
+
 # Transcrição DNA → RNA
 
 Os quatro nucleotídeos encontrados no DNA são adenina (A), citosina (C), guanina (G) e timina (T). Os nucleotídeos no RNA são adenina (A), citosina (C), guanina (G) e uracila (U). 
@@ -26,10 +30,6 @@ A transcrição de DNA em RNA acontece com as seguintes associações:
 - `A` -> `U`
 
 Então uma sequência de DNA `GGCTA` deveria ser transcrita em uma sequência `CCGAU` de RNA. Implemente uma função que recebe uma string com uma sequência de DNA (e.g. `"ACTGATA"`) e retorna outra string, com sua transcrição em RNA (e.g. `"UGACUAU"`)
-
-# Momentos Estatísticos
-
-Implemente uma função que computa o $k$-ésimo momento amostral. Suponha que a amostra será representada por uma estrutura de dados iterável como uma lista ou um vetor com as medidas da amostra. Modifique a implementação para que tenha um argumento adicional, `central` que recebe um valor lógico e caso verdadeiro, retorna o $k$-ésimo momento central.
 
 # Processando e explorando dados em um banco relacional
 
