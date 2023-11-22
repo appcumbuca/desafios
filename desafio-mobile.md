@@ -82,8 +82,7 @@ conversa por videochamada com você.
 Após a entrega de seu desafio, conversaremos com você sobre a estrutura do seu código e as escolhas feitas por você. Esteja pronta(o) para explicar as decisões que tomou e conversar sobre alternativas. Alguns tópicos nos quais iremos tocar (mas não os únicos) serão: estruturas de interfaces, arquitetura de código, escolha de mecanismos de gestão de estado e de persistência, etc. Além disso, poderemos mudar as condições do desafio e perguntar o que você teria feito diferentemente.
 
 ## Regras de negócio
-1.A entrada no aplicativo desafio deverá conter um login e senha (CPF + senha de no mínimo 8 dígitos), o qual deverá ocorrer o cadastro na primeira entrada e depois deverá conferir usuário e senha. O CPF deverá ser validado e caso não confira o DV, deverá ser informado o erro. Caso a senha não esteja correta, deverá ser informado o erro.
-
+1. A entrada no aplicativo desafio deverá conter um login e senha (CPF + senha de no mínimo 8 dígitos), o qual deverá ocorrer o cadastro na primeira entrada e depois deverá conferir usuário e senha. O CPF deverá ser validado e caso não confira o DV, deverá ser informado o erro. Caso a senha não esteja correta, deverá ser informado o erro.
 2. Uma vez que a lista de produtos é modificada, a alteração deve ser localmente persistida. Isto é, se o usuário sair do aplicativo, a lista de produtos na qual ele estava trabalhando deve continuar como estava antes da atualização.
 3. Uma vez que seja inserido texto na barra de busca, a lista de produtos deve exibir apenas os produtos cujo nome corresponda (total ou parcialmente) ao texto inserido na barra. Isso não deve afetar a lista de produtos, afetando apenas quais produtos da lista são exibidos.
 4. O id do produto não deve ser fornecido através de campo: Ao invés disso, o produto deve receber um id sequencial, iniciando em 1.
