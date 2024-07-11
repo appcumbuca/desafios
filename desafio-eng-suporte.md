@@ -78,7 +78,7 @@ conosco para combinarmos como podemos acessar seu código.
 ### Critérios de avaliação
 
 #### Ausência de bugs
-Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento e sem apresentar erros
+Seu código deve funcionar corretamente, atendendo a todos os requisitos da especificação representada por este documento e sem apresentar erros, **independentemente do tamanho da entrada**.
 
 #### Legibilidade e Formatação
 Lembre-se que um trecho de código em geral será lido muito mais vezes do que
