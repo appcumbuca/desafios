@@ -218,7 +218,7 @@ FALSE 1
 > BEGIN
 2
 > SET foo bar
-FALSE foo
+FALSE bar
 > SET bar baz
 FALSE baz
 > GET foo
@@ -274,7 +274,7 @@ FALSE 1
 > BEGIN
 2
 > SET foo bar
-FALSE foo
+FALSE bar
 > SET bar baz
 FALSE baz
 > GET foo
