@@ -57,8 +57,8 @@ receber comandos.
 
 As chaves do banco devem ser strings. Ao passar uma chave para um comando que espere isso,
 a chave é passada simplesmente escrevendo o seu valor - exceto caso a chave contenha espaços
-em branco, caso no qual ela deve ser cercada de aspas simples. Chaves serão representadas da
-mesma forma que valores do tipo string, com as mesmas restrições e o uso de aspas simples
+em branco, caso no qual ela deve ser cercada de aspas duplas. Chaves serão representadas da
+mesma forma que valores do tipo string, com as mesmas restrições e o uso de aspas duplas
 conforme necessário.
 
 Os valores podem ser inteiros, strings ou booleanos.
